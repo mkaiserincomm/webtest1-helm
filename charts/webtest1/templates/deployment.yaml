@@ -20,7 +20,8 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
       labels:
-        {{- include "webtest1.selectorLabels" . | nindent 8 }}
+        {{- include "webtest1.selectorLabels" . | nindent 8 }}    
+        app.kubernetes.io/instance: {{ .Values.image.tag }}    
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
