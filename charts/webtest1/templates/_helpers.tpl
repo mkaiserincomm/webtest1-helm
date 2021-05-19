@@ -48,6 +48,7 @@ Selector labels
 {{- define "webtest1.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "webtest1.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
+app.kubernetes.io/version: {{ .Values.image.tag }}
 {{- end }}
 
 {{/*
