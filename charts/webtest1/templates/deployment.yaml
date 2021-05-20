@@ -21,6 +21,7 @@ spec:
         {{- end }}
       labels:
         {{- include "webtest1.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/version: {{ .Values.image.tag }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:

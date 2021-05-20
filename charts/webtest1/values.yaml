@@ -5,10 +5,10 @@
 replicaCount: 3
 
 image:
-  repository: mgkaiser/webtest1
+  repository: docker.maven.incomm.com/mgkaiser/webtest1
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: "Build-64"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -48,7 +48,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: webtest1.kaiser.guru
+    - host: webtest1.sigcntnr.kaiser.guru
       paths:
       - path: 
         backend:
