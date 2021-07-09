@@ -10,7 +10,7 @@ spec:
   - interval: 5s
     path: /metrics
     targetPort: 80
-  namespaceSelctor:
+  namespaceSelector:
     matchNames:
     - {{ .Release.Namespace }}
   selector:
