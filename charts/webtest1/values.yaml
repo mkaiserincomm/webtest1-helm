@@ -8,14 +8,19 @@ image:
   repository: mgkaiser/webtest1
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "Build-65"
+  tag: "Build-66"
 
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
 environment: Development
-
+log:
+  url: splunk-s1-standalone-0.splunk-s1-standalone-headless.splunk.svc.kaiser.guru
+  port: 8088
+  secretname: splunk-secret
+  secretkey: hec_token
+  
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
