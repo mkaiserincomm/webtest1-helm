@@ -7,7 +7,7 @@ metadata:
     app.kubernetes.io/name: {{ include "webtest1.fullname" . }}
 spec: 
   endpoints:
-  - interval: 1s
+  - interval: 10s
     path: /metrics
     targetPort: 80
   namespaceSelector:
