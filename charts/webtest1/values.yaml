@@ -8,7 +8,7 @@ image:
   repository: docker.maven.incomm.com/mgkaiser/webtest1
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "Build-81"
+  tag: "Build-82"
 
 imagePullSecrets: []
 nameOverride: ""
