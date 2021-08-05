@@ -36,8 +36,8 @@ Common labels
 {{- define "webtest1.labels" -}}
 helm.sh/chart: {{ include "webtest1.chart" . }}
 {{ include "webtest1.selectorLabels" . }}
-{{- if .Chart.AppVersion }}
-app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- if .Values.image.tag }}
+app.kubernetes.io/version: {{ .Values.image.tag | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
