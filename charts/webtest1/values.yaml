@@ -58,6 +58,12 @@ ingress:
         backend:
           serviceName: webtest1
           servicePort: 80
+    - host: webtest1.sigcntnr.kaiser.guru
+      paths:
+      - path: 
+        backend:
+          serviceName: webtest1
+          servicePort: 80
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
