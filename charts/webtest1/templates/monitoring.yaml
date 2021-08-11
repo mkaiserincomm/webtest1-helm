@@ -1,18 +1,18 @@
-apiVersion: monitoring.coreos.com/v1
-kind: ServiceMonitor
-metadata:
-  name: {{ include "webtest1.fullname" . }}-monitor
-  namespace: {{ .Release.Namespace }}
-  labels:    
-    app.kubernetes.io/name: {{ include "webtest1.fullname" . }}
-spec: 
-  endpoints:
-  - interval: 10s
-    path: /metrics
-    targetPort: 80
-  namespaceSelector:
-    matchNames:
-    - {{ .Release.Namespace }}
-  selector:
-    matchLabels:
-      app.kubernetes.io/name: {{ include "webtest1.fullname" . }}
+#apiVersion: monitoring.coreos.com/v1
+#kind: ServiceMonitor
+#metadata:
+#  name: {{ include "webtest1.fullname" . }}-monitor
+#  namespace: {{ .Release.Namespace }}
+#  labels:    
+#    app.kubernetes.io/name: {{ include "webtest1.fullname" . }}
+#spec: 
+#  endpoints:
+#  - interval: 10s
+#    path: /metrics
+#    targetPort: 80
+#  namespaceSelector:
+#    matchNames:
+#    - {{ .Release.Namespace }}
+#  selector:
+#    matchLabels:
+#      app.kubernetes.io/name: {{ include "webtest1.fullname" . }}
