@@ -6,8 +6,8 @@ replicaCount: 3
 
 image:
   repository: docker.maven.incomm.com/mgkaiser/webtest1
-  pullPolicy: Always  
-  tag: "Build-114"
+  pullPolicy: Always
+  tag: "Build-116"
 
 imagePullSecrets: []
 nameOverride: ""
