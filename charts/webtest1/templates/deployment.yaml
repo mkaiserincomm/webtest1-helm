@@ -2,7 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "webtest1.fullname" . }}
-  labels:    
+  labels:
+    {{- include "webtest1.labels" . | nindent 4 }}    
     {{- with .Values.podLabels }}
     {{- toYaml . | nindent 4 }}
     {{- end }}
@@ -14,8 +15,7 @@ spec:
     matchLabels:
       {{- include "webtest1.selectorLabels" . | nindent 6 }}
   template:
-    metadata:
-      
+    metadata:      
       annotations:
         rollme:  {{ randAlphaNum 5 | quote }}
         {{- with .Values.podAnnotations }}
