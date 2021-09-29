@@ -7,7 +7,6 @@ replicaCount: 3
 image:
   repository: docker.maven.incomm.com/mgkaiser/webtest1
   pullPolicy: Always
-  # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
 imagePullSecrets: []
@@ -15,6 +14,11 @@ nameOverride: ""
 fullnameOverride: ""
 
 environment: Development
+log:
+  url: splunk-s1-standalone-0.splunk-s1-standalone-headless.splunk.svc.kaiser.guru
+  port: 8088
+  secretname: splunk-secret
+  secretkey: hec_token
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -25,7 +29,11 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-podAnnotations: {}  
+podAnnotations: {}
+
+podLabels:
+  app: webtest1
+  version: "latest" 
 
 podSecurityContext: {}
   # fsGroup: 2000
@@ -48,6 +56,12 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
+    - host: webtest1.sigcntnr.incomm.com
+      paths:
+      - path: 
+        backend:
+          serviceName: webtest1
+          servicePort: 80
     - host: webtest1.sigcntnr.kaiser.guru
       paths:
       - path: 
