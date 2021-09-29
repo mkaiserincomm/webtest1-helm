@@ -4,6 +4,10 @@ metadata:
   name: {{ include "webtest1.fullname" . }}
   labels:
     {{- include "webtest1.labels" . | nindent 4 }}
+    {{- include "webtest1.selectorLabels" . | nindent 4 }}
+    {{- with .Values.podLabels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
