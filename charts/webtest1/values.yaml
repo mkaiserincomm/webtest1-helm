@@ -8,7 +8,7 @@ image:
   repository: mgkaiser/webtest1
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "Build-118"
+  tag: "Build-119"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -32,7 +32,7 @@ serviceAccount:
 
 podAnnotations:
   app: webtest1
-  version: "latest"  
+  version: "Build-119"  
 
 podSecurityContext: {}
   # fsGroup: 2000
