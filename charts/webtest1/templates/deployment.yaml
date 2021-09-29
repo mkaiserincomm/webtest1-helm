@@ -2,9 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "webtest1.fullname" . }}
-  labels:
-    {{- include "webtest1.labels" . | nindent 4 }}
-    {{- include "webtest1.selectorLabels" . | nindent 4 }}
+  labels:    
     {{- with .Values.podLabels }}
     {{- toYaml . | nindent 4 }}
     {{- end }}
