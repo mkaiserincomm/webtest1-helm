@@ -4,6 +4,9 @@ metadata:
   name: {{ include "webtest1.fullname" . }}
   labels:
     {{- include "webtest1.labels" . | nindent 4 }}
+    {{- with .Values.podLabels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
 spec:
   type: {{ .Values.service.type }}
   ports:

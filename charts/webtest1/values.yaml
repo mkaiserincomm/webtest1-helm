@@ -6,9 +6,8 @@ replicaCount: 3
 
 image:
   repository: mgkaiser/webtest1
-  pullPolicy: Always
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: "Build-117"
+  pullPolicy: Always  
+  tag: "Build-126"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -30,7 +29,11 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-podAnnotations: {}  
+podAnnotations: {}
+
+podLabels:
+  app: webtest1
+  version: "Build-126"  
 
 podSecurityContext: {}
   # fsGroup: 2000
