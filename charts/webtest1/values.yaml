@@ -18,7 +18,8 @@ log:
   url: splunk-s1-standalone-0.splunk-s1-standalone-headless.splunk.svc.kaiser.guru
   port: 8088
   secretname: splunk-secret
-  secretkey: hec_token
+  secretkey: hec-token
+  index: lower_env  
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -30,6 +31,10 @@ serviceAccount:
   name: ""
 
 podAnnotations: {}  
+
+podLabels:
+  app: webtest1
+  version: "latest"  
 
 podSecurityContext: {}
   # fsGroup: 2000
