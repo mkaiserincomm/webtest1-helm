@@ -16,8 +16,7 @@ spec:
       {{- include "webtest1.selectorLabels" . | nindent 6 }}
   template:
     metadata:      
-      annotations:
-        rollme:  {{ randAlphaNum 5 | quote }}
+      annotations:        
         {{- with .Values.podAnnotations }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
