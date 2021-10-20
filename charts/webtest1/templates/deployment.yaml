@@ -9,7 +9,6 @@ metadata:
     {{- toYaml . | nindent 4 }}
     {{- end }}
 spec:
-spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
@@ -18,7 +17,6 @@ spec:
       {{- include "webtest1.selectorLabels" . | nindent 6 }}
   template:    
     metadata:      
-    
       annotations:        
         {{- with .Values.podAnnotations }}
         {{- toYaml . | nindent 8 }}
