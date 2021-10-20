@@ -5,8 +5,8 @@
 replicaCount: 3
 
 image:
-  repository: docker.maven.incomm.com/mgkaiser/webtest1
-  pullPolicy: Always
+  repository: mgkaiser/webtest1
+  pullPolicy: Always  
   tag: "Build-127"
 
 imagePullSecrets: []
@@ -14,12 +14,6 @@ nameOverride: ""
 fullnameOverride: ""
 
 environment: Development
-log:
-  url: 10.114.9.13
-  port: 5443
-  secretname: splunk-secret
-  secretkey: hec-token
-  index: lower_env  
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -34,11 +28,7 @@ podAnnotations: {}
 
 podLabels:
   app: webtest1
-  version: "Build-127" 
-
-podLabels:
-  app: webtest1
-  version: "Build-127"  
+  version: "latest"  
 
 podSecurityContext: {}
   # fsGroup: 2000
@@ -67,12 +57,7 @@ ingress:
         backend:
           serviceName: webtest1
           servicePort: 80
-    - host: webtest1.sigcntnr.kaiser.guru
-      paths:
-      - path: 
-        backend:
-          serviceName: webtest1
-          servicePort: 80
+    
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
