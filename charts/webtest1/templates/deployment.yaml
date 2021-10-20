@@ -3,7 +3,10 @@ kind: Deployment
 metadata:
   name: {{ include "webtest1.fullname" . }}
   labels:
-    {{- include "webtest1.labels" . | nindent 4 }}
+    {{- include "webtest1.labels" . | nindent 4 }}    
+    {{- with .Values.podLabels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
@@ -12,16 +15,17 @@ spec:
     matchLabels:
       {{- include "webtest1.selectorLabels" . | nindent 6 }}
   template:
-    metadata:
-      
-      annotations:
-        rollme:  {{ randAlphaNum 5 | quote }}
+    metadata:      
+      annotations:        
         {{- with .Values.podAnnotations }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
       labels:
         {{- include "webtest1.selectorLabels" . | nindent 8 }}
-        app.kubernetes.io/version: {{ .Values.image.tag }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+        app.kubernetes.io/version: {{ .Values.image.tag }}        
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
