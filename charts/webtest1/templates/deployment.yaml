@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "webtest1.fullname" . }}
   labels:
-    {{- include "webtest1.labels" . | nindent 4 }}    
+    {{- include "webtest1.labels" . | nindent 4 }}
     {{- include "webtest1.selectorLabels" . | nindent 4 }}
     {{- with .Values.podLabels }}
     {{- toYaml . | nindent 4 }}
@@ -15,7 +15,7 @@ spec:
   selector:
     matchLabels:
       {{- include "webtest1.selectorLabels" . | nindent 6 }}
-  template:
+  template:    
     metadata:      
       annotations:        
         {{- with .Values.podAnnotations }}
@@ -26,7 +26,7 @@ spec:
         {{- with .Values.podLabels }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
-        app.kubernetes.io/version: {{ .Values.image.tag }}        
+        app.kubernetes.io/version: {{ .Values.image.tag }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:

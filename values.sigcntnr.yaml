@@ -5,7 +5,7 @@
 replicaCount: 3
 
 image:
-  repository: docker.maven.incomm.com/mgkaiser/webtest1
+  repository: mgkaiser/webtest1
   pullPolicy: Always  
   tag: "latest"
 
@@ -24,7 +24,9 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-podAnnotations: {}
+podAnnotations:
+  app: webtest1
+  version: "latest"
 
 podLabels:
   app: webtest1
