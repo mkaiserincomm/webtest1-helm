@@ -7,7 +7,7 @@ replicaCount: 3
 image:
   repository: mgkaiser/webtest1
   pullPolicy: Always  
-  tag: "Build-136"
+  tag: "Build-137"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -26,11 +26,11 @@ serviceAccount:
   
 podAnnotations:
   app: webtest1
-  version: "Build-136"
+  version: "Build-137"
 
 podLabels:
   app: webtest1
-  version: "Build-136"  
+  version: "Build-137"  
 
 podSecurityContext: {}
   # fsGroup: 2000
