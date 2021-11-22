@@ -43,7 +43,9 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: ASPNETCORE_ENVIRONMENT
-              value: {{.Values.environment}}            
+              value: {{.Values.environment}}   
+            - name: DOTNET_Message
+              value: {{.Values.message}}         
           ports:
             - name: http
               containerPort: 80
