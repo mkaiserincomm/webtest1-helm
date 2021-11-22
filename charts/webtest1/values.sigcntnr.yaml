@@ -5,7 +5,7 @@
 replicaCount: 3
 
 image:
-  repository: docker.maven.incomm.com/webtest1
+  repository: docker.maven.incomm.com/mgkaiser/webtest1
   pullPolicy: Always  
   tag: "Build-140"
 
