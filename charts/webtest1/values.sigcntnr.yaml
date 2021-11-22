@@ -5,9 +5,9 @@
 replicaCount: 3
 
 image:
-  repository: docker.maven.incomm.com/mgkaiser/webtest1
+  repository: mgkaiser/webtest1
   pullPolicy: Always  
-  tag: "Build-127"
+  tag: "Build-139"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -27,11 +27,11 @@ serviceAccount:
 
 podAnnotations:
   app: webtest1
-  version: "Build-127"
+  version: "Build-139"
 
 podLabels:
   app: webtest1
-  version: "Build-127"  
+  version: "Build-139"  
 
 podSecurityContext: {}
   # fsGroup: 2000
@@ -59,8 +59,8 @@ ingress:
       - path: 
         backend:
           serviceName: webtest1
-          servicePort: 80
-    
+          servicePort: 80  
+
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:

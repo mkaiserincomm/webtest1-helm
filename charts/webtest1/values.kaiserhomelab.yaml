@@ -7,7 +7,7 @@ replicaCount: 3
 image:
   repository: mgkaiser/webtest1
   pullPolicy: Always  
-  tag: "Build-127"
+  tag: "Build-139"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -24,14 +24,14 @@ serviceAccount:
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
-
+  
 podAnnotations:
   app: webtest1
-  version: "Build-127"
+  version: "Build-139"
 
 podLabels:
   app: webtest1
-  version: "Build-127"
+  version: "Build-139"  
 
 podSecurityContext: {}
   # fsGroup: 2000
