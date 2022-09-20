@@ -56,7 +56,8 @@ ingress:
   hosts:
     - host: webtest1.sandbox1-ll.ecn.incomm.com
       paths:
-      - path: 
+      - path:
+        pathType: Prefix 
         backend:
           serviceName: webtest1
           servicePort: 80  
