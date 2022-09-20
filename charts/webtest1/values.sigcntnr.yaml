@@ -7,7 +7,7 @@ replicaCount: 3
 image:
   repository: docker.maven.incomm.com/mgkaiser/webtest1
   pullPolicy: Always  
-  tag: "Build-147"
+  tag: "Build-148"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -27,11 +27,11 @@ serviceAccount:
 
 podAnnotations:
   app: webtest1
-  version: "Build-147"
+  version: "Build-148"
 
 podLabels:
   app: webtest1
-  version: "Build-147"  
+  version: "Build-148"  
 
 podSecurityContext: {}
   # fsGroup: 2000
