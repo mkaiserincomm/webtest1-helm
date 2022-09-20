@@ -56,7 +56,7 @@ ingress:
   hosts:
     - host: webtest1.sandbox1-ll.ecn.incomm.com
       paths:
-      - path:
+      - path: /
         pathType: Prefix 
 
   tls: []
