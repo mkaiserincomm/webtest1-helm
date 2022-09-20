@@ -58,10 +58,6 @@ ingress:
       paths:
       - path:
         pathType: Prefix 
-        backend:
-          service:
-            name: webtest1
-            port: 80  
 
   tls: []
   #  - secretName: chart-example-tls
